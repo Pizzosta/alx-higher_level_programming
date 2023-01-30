@@ -7,7 +7,7 @@ class MagicClass:
     of a circumference"""
 
     def __init__(self, radius):
-        if not (isinstance(radius, int) or isinstance(radius, float)):
+        if not (isinstance(radius, int) and isinstance(radius, float)):
             raise TypeError('radius must be a number')
         self.__radius = radius
 
