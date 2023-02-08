@@ -4,7 +4,6 @@ Define function that checks inheritance of class object
 """
 
 
-
 def inherits_from(obj, a_class):
     """Checks if the object is an instance of a_class
 
