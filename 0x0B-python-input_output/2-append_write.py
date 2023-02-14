@@ -3,7 +3,7 @@
 and returns the number of characters written"""
 
 
-def append_file(filename="", text=""):
+def append_write(filename="", text=""):
     """Function that appends to a text file
 
     Args:
