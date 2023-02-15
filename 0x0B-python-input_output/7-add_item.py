@@ -14,4 +14,4 @@ except FileNotFoundError:
     py_list = []
 
 py_list += sys.argv[1:]  # append items to list
-save_file(py_list, add_item.json)  # save items to file
+save_to_json_file(py_list, add_item.json)  # save items to file
