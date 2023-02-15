@@ -11,7 +11,7 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 py_list = []
 if os.path.exists("add_item.json"):
-    py_list[] = load_file("add_item.json")
+    py_list[] = load_from_json_file("add_item.json")
 
 for arg in sys.argv[1:]:  # append items to list
     py_list.append(arg)
