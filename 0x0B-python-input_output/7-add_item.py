@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-Writes a script that adds all arguments from cmd line to a Python list
+""" Module that adds all arguments from cmd line to a Python list
 then saves to a JSON file.
 """
 import sys
