@@ -23,42 +23,42 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-        @property
-        def width(self):
-            """retrieves the width"""
-            return self.__width
+    @property
+    def width(self):
+        """retrieves the width"""
+        return self.__width
 
-        @width.setter
-        def width(self, value):
-            """set the width"""
-            self.__width = value
+    @width.setter
+    def width(self, value):
+        """set the width"""
+        self.__width = value
 
-        @property
-        def height(self):
-            """retrieves the height"""
-            return self.__height
+    @property
+    def height(self):
+        """retrieves the height"""
+        return self.__height
 
-        @height.setter
-        def height(self, value):
-            """set the height"""
-            self.__height = value
+    @height.setter
+    def height(self, value):
+        """set the height"""
+        self.__height = value
 
-        @property
-        def x(self):
-            """retrieves x coordinate"""
-            return self.__x
+    @property
+    def x(self):
+        """retrieves x coordinate"""
+        return self.__x
 
-        @x.setter
-        def x(self, value):
-            """set x coordinate"""
-            self.__x = value
+    @x.setter
+    def x(self, value):
+        """set x coordinate"""
+        self.__x = value
 
-        @property
-        def y(self):
-            """retrieves y coordinate"""
-            return self.__y
+    @property
+    def y(self):
+        """retrieves y coordinate"""
+        return self.__y
 
-        @y.setter
-        def y(self, value):
-            """retrieves y coordinates"""
-            self.__y = value
+    @y.setter
+    def y(self, value):
+        """retrieves y coordinates"""
+        self.__y = value
