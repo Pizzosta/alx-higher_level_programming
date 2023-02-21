@@ -98,3 +98,34 @@ class Rectangle(Base):
                                                         self.x, self.y,
                                                         self.width,
                                                         self.height))
+
+    def update(self, *args):
+        """Update the class Rectangle
+
+        Arg:
+            *args - new attributes:
+                1st argument is id attribute
+                2nd argument is width attribute
+                3rd argument is height attribute
+                4th argument is x attribute
+                5th argument is y attribute
+        """
+        if args and len(args) != 0:
+            a = 0
+
+            for arg in args:
+                if a == 0:
+                    if id is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif a == 1:
+                    self.width = arg
+                elif a == 2:
+                    self.height = arg
+                elif a == 3:
+                    self.x = arg
+                elif a == 4:
+                    self.y = arg
+
+                a += 1
