@@ -98,6 +98,11 @@ class TestRectangle(unittest.TestCase):
 class TestRectangle_width(unittest.TestCase):
     """Unittests for testing initialization of Rectangle width attribute."""
 
+    def test_bool_width(self):
+        new = Rectangle(8, 7, 8, 9, 10)
+        new.width = True
+        self.assertRaises(TypeError, "width must be an integer")
+
     def test_None_width(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Rectangle(None, 2)
@@ -241,6 +246,11 @@ class TestRectangle_height(unittest.TestCase):
 
 class TestRectangle_x(unittest.TestCase):
     """Unittests for testing initialization of Rectangle x attribute."""
+
+    def test_bool_x(self):
+        new = Rectangle(7, 9, False, 7, 9)
+        new.x = False
+        self.assertRaises(TypeError, "x must be an integer")
 
     def test_None_x(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
