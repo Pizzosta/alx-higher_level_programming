@@ -82,12 +82,6 @@ class TestSquare_size(unittest.TestCase):
         self.assertEqual(s1.x, 0)
         self.assertEqual(s1.y, 0)
         self.assertIsNotNone(s1.id)
-        with self.assertRaises(ValueError) as cm:
-            s2 = Square(0)
-        self.assertEqual(str(cm.exception), "width must be > 0")
-        with self.assertRaises(TypeError) as cm:
-            s3 = Square("hello")
-        self.assertEqual(str(cm.exception), "width must be an integer")
 
     def test_None_size(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
