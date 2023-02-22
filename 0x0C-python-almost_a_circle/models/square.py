@@ -37,32 +37,31 @@ class Square(Rectangle):
                                                   self.y, self.width))
 
     def update(self, *args, **kwargs):
-        """Update the class Square
-        Arg:
-            *args - new attributes:
-                1st argument is id attribute
-                2nd argument is width attribute
-                3rd argument is height attribute
-                4th argument is x attribute
-                5th argument is y attribute
+        """Updates and assigns new attributes to Square
+        Args:
+            *args (ints): new list of arguments (no-keyword-argument)
+            1st arg (int): id attribute of Square
+            2nd arg (int): size attribute of Square
+            3rd arg (int): x attribute of Square
+            4th arg (int): y attribute of Square
+            **kwargs (dict): New key/value argument
         """
         if args:
             if len(args) > 0:
                 self.id = args[0]
             if len(args) > 1:
-                self.width = args[1]
+                self.size = args[1]
             if len(args) > 2:
-                self.height = args[2]
+                self.x = args[2]
             if len(args) > 3:
-                self.x = args[3]
-            if len(args) > 4:
-                self.y = args[4]
+                self.y = args[3]
         else:
-            if "id" in kwargs:
-                self.id = kwargs["id"]
-            if "size" in kwargs:
-                self.size = kwargs["size"]
-            if "x" in kwargs:
-                self.x = kwargs["x"]
-            if "y" in kwargs:
-                self.y = kwargs["y"]
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
+        return {"id": self.id,
+                "size": self.size,
+                "x": self.x,
+                "y": self.y}
