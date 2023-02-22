@@ -35,3 +35,34 @@ class Square(Rectangle):
         """String & Print representation"""
         return ("[Square] ({}) {}/{} - {}".format(self.id, self.x,
                                                   self.y, self.width))
+
+    def update(self, *args, **kwargs):
+        """Update the class Square
+        Arg:
+            *args - new attributes:
+                1st argument is id attribute
+                2nd argument is width attribute
+                3rd argument is height attribute
+                4th argument is x attribute
+                5th argument is y attribute
+        """
+        if args:
+            if len(args) > 0:
+                self.id = args[0]
+            if len(args) > 1:
+                self.width = args[1]
+            if len(args) > 2:
+                self.height = args[2]
+            if len(args) > 3:
+                self.x = args[3]
+            if len(args) > 4:
+                self.y = args[4]
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "size" in kwargs:
+                self.size = kwargs["size"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
