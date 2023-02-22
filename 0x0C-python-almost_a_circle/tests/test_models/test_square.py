@@ -71,8 +71,16 @@ class TestSquare(unittest.TestCase):
     def test_y_getter(self):
         self.assertEqual(0, Square(10).y)
 
+
 class TestSquare_size(unittest.TestCase):
     """Unittests for testing size initialization of the Square class."""
+    def test_square_init_size(self):
+        s = Square(5)
+        assert s.id is not None
+        assert s.width == 5
+        assert s.height == 5
+        assert s.x == 0
+        assert s.y == 0
 
     def test_None_size(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
@@ -143,6 +151,7 @@ class TestSquare_size(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Square(0, 2)
 
+
 class TestSquare_x(unittest.TestCase):
     """Unittests for testing initialization of Square x attribute."""
 
@@ -209,6 +218,7 @@ class TestSquare_x(unittest.TestCase):
     def test_negative_x(self):
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             Square(5, -1, 0)
+
 
 class TestSquare_y(unittest.TestCase):
     """Unittests for testing initialization of Square y attribute."""
@@ -277,6 +287,7 @@ class TestSquare_y(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Square(3, 0, -1)
 
+
 class TestSquare_order_of_initialization(unittest.TestCase):
     """Unittests for testing order of Square attribute initialization."""
 
@@ -291,6 +302,7 @@ class TestSquare_order_of_initialization(unittest.TestCase):
     def test_x_before_y(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Square(1, "invalid x", "invalid y")
+
 
 class TestSquare_area(unittest.TestCase):
     """Unittests for testing the area method of the Square class."""
@@ -311,6 +323,7 @@ class TestSquare_area(unittest.TestCase):
         s = Square(2, 10, 1, 1)
         with self.assertRaises(TypeError):
             s.area(1)
+
 
 class TestSquare_stdout(unittest.TestCase):
     """Unittests for testing __str__ and display methods of Square class."""
