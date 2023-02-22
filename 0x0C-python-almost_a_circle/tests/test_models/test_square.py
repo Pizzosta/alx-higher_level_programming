@@ -75,12 +75,19 @@ class TestSquare(unittest.TestCase):
 class TestSquare_size(unittest.TestCase):
     """Unittests for testing size initialization of the Square class."""
     def test_square_init_size(self):
-        s = Square(5)
-        assert s.id is not None
-        assert s.width == 5
-        assert s.height == 5
-        assert s.x == 0
-        assert s.y == 0
+        s1 = Square(5)
+        self.assertEqual(s1.size, 5)
+        self.assertEqual(s1.width, 5)
+        self.assertEqual(s1.height, 5)
+        self.assertEqual(s1.x, 0)
+        self.assertEqual(s1.y, 0)
+        self.assertIsNotNone(s1.id)
+        with self.assertRaises(ValueError) as cm:
+            s2 = Square(0)
+        self.assertEqual(str(cm.exception), "width must be > 0")
+        with self.assertRaises(TypeError) as cm:
+            s3 = Square("hello")
+        self.assertEqual(str(cm.exception), "width must be an integer")
 
     def test_None_size(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
