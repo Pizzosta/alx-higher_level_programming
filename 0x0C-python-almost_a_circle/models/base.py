@@ -40,4 +40,3 @@ class Base:
             else:
                 list_dicts = [obj.to_dictionary() for obj in list_objs]
                 jsonfile.write(Base.to_json_string(list_dicts))
-
