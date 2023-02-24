@@ -76,7 +76,7 @@ class Base:
                 return [cls.create(**items) for items in list_dicts]
         except IOError:
             return []
-    
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """serialize objects in CSV
@@ -95,7 +95,7 @@ class Base:
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 for obj in list_objs:
                     writer.writerow(obj.to_dictionary())
-    
+
     @classmethod
     def load_from_file_csv(cls):
         """Returns a list of classes instantiated from a CSV file
