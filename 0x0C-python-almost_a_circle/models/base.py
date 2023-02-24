@@ -2,6 +2,7 @@
 """Module of a Base Class"""
 
 import json
+import csv
 
 
 class Base:
@@ -73,5 +74,27 @@ class Base:
             with open(filename, 'r') as jsonfile:
                 list_dicts = Base.from_json_string(jsonfile.read())
                 return [cls.create(**items) for items in list_dicts]
+        except IOError:
+            return []
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Returns a list of classes instantiated from a CSV file
+        File is read from <cls.__name__>.csv
+        Return:
+            if file does not exist - an empty list
+            Else - a list of instantiated classes
+        """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, 'r', newline="") as csvfile:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
+                list_dicts = [dict([k, int(v)] for k, v in d.items())
+                              for d in list_dicts]
+                return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
