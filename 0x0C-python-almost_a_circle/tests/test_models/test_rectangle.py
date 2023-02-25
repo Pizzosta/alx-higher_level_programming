@@ -548,7 +548,8 @@ class TestRectangle_stdout(unittest.TestCase):
         r = Rectangle(5, 1, 2, 4, 7)
         with self.assertRaises(TypeError):
             r.display(1)
-    
+
+
 class TestRectangle_update_args(unittest.TestCase):
     """Unittests for testing update args method of the Rectangle class."""
 
@@ -686,6 +687,7 @@ class TestRectangle_update_args(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r.update(89, 1, 2, "invalid", "invalid")
 
+
 class TestRectangle_update_kwargs(unittest.TestCase):
     """Unittests for testing update kwargs method of the Rectangle class."""
 
@@ -797,11 +799,13 @@ class TestRectangle_update_kwargs(unittest.TestCase):
         r.update(height=5, id=89, a=1, b=54, x=19, y=7)
         self.assertEqual("[Rectangle] (89) 19/7 - 10/5", str(r))
 
+
 class TestRectangle_to_dictionary(unittest.TestCase):
     """Unittests for testing to_dictionary method of Rectangle"""
     def test_to_dictionary_output(self):
         r = Rectangle(10, 2, 1, 9, 5)
-        self.assertDictEqual(r.to_dictionary(), {'id': 5, 'width': 10, 'height': 2, 'x': 1, 'y': 9})
+        self.assertDictEqual(r.to_dictionary(), {'id': 5, 'width': 10,
+                                                 'height': 2, 'x': 1, 'y': 9})
 
     def test_to_dictionary_no_object_changes(self):
         r1 = Rectangle(10, 2, 1, 9, 5)
