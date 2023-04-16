@@ -4,6 +4,4 @@
  * The name of the function must be add
  */
 
-const add = (a, b) => a + b;
-
-module.exports = add;
+exports.add = (a, b) => a + b;
