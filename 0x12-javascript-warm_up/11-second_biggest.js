@@ -5,7 +5,7 @@
  * If the number of arguments is 1, print 0
  */
 
-if (process.argv.length <= 2) {
+if (process.argv.length <= 3) {
   console.log(0);
 } else {
   const args = process.argv.slice(2);
