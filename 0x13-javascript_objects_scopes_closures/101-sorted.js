@@ -11,12 +11,12 @@
 const dict = require('./101-data').dict;
 const newDict = {};
 
-Object.keys(dict).map(function (key, index) {
-  if (newDict[dict[key]] === undefined) {
-    newDict[dict[key]] = [];
+Object.keys(dict).forEach(function (key) {
+  const occurrence = dict[key];
+  if (newDict[occurrence] === undefined) {
+    newDict[occurrence] = [];
   }
-  newDict[dict[key]].push(key);
-  return null;
+  newDict[occurrence].push(key);
 });
 
 console.log(newDict);
