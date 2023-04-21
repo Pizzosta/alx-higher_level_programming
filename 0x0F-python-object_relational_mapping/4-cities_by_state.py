@@ -22,10 +22,12 @@ if __name__ == '__main__':
 
     # define SQL query
     query = "SELECT cities.id, cities.name, states.name FROM cities \
-            INNER JOIN states ON states.id=cities.states.id"
+            INNER JOIN states \
+            ON states.id=cities.states.id \
+            ORDER BY cities.id"
 
     # Execute query
-    cur.execute(query, ())
+    cur.execute(query)
 
     cities = cur.fetchall()
 
