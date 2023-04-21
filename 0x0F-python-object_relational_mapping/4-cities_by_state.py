@@ -20,16 +20,14 @@ if __name__ == '__main__':
     # create cursor
     cur = db.cursor()
 
-    # define SQL query
-    query = "SELECT cities.id, cities.name, states.name FROM cities \
+    # define & execute SQL query
+    cur.execute("""SELECT cities.id, cities.name, states.name \
+            FROM cities \
             INNER JOIN states \
             ON states.id=cities.states.id \
-            ORDER BY cities.id"
+            ORDER BY cities.id ASC""")
 
-    # Execute query
-    cur.execute(query)
-
-    cities = cur.fetchall()
+   cities = cur.fetchall()
 
     # print results
     for city in cities:
