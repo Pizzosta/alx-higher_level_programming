@@ -36,8 +36,8 @@ if __name__ == '__main__':
     cities = cur.fetchall()
 
     # print results
-    for city in cities:
-        print(city)
+    results = list(city[0] for city in cities)
+    print(", ".join(results))
 
     # close all connections/clean-up
     cur.close()
