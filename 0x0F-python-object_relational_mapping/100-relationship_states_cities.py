@@ -22,8 +22,8 @@ if __name__ == '__main__':
     session = Session()
 
     # query
-    new_state = State.(name="California")
-    new_city = City.(name="San Francisco")
+    new_state = State(name="California")
+    new_city = City(name="San Francisco")
     new_state.cities.append(new_city)
 
     # insert the new State and City object
