@@ -2,8 +2,9 @@
 """ a python file that contains the class definition of a City and
 inherits from the Base model"""
 
-from sqlalchemy import Column, Integer, String, MetaData
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
+from model_state import Base
 
 stateMeta = MetaData()  # parameterize metadata for modular use
 
