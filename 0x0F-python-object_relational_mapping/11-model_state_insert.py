@@ -18,7 +18,7 @@ if __name__ == '__main__':
     # create a new session
     Session = sessionmaker(bind=engine)
     session = Session()
-    
+
     # Create and add a new state to the session.
     new_state = State(name="Louisiana")
     session.add(new_state)
