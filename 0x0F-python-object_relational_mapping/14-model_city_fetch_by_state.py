@@ -20,8 +20,8 @@ if __name__ == '__main__':
     session = Session()
 
     # query
-    cities = session.query(State, City).filter(State.id == City.state_id). \
-             order_by(City.id).all()
+    cities = (session.query(State, City).filter(State.id == City.state_id).
+              order_by(City.id).all())
 
     # delete all returned records
     for state, city in cities:
