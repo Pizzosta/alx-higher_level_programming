@@ -25,7 +25,9 @@ if __name__ == '__main__':
     # delete all returned records
     for state in states:
         session.delete(state)
-        session.commit()
+    
+    # commit session
+    session.commit()
 
     # close session
     session.close()
