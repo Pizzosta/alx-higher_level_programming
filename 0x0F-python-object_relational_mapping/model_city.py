@@ -6,11 +6,6 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from model_state import Base
 
-stateMeta = MetaData()  # parameterize metadata for modular use
-
-Base = declarative_base(metadata=stateMeta)  # create Base instance
-
-
 class City(Base):
     """Creates an instance of City
 
