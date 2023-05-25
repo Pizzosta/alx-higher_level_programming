@@ -1,4 +1,5 @@
 #!/usr/bin/node
+/** usage:./100-starwars_characters.js <ID> */
 
 const request = require('request');
 
