@@ -2,6 +2,7 @@
 /**
 * The first argument is the API URL: https://jsonplaceholder.typicode.com/todos
 * Only print users with completed task
+* usage: ./6-completed_tasks.js <URL>
 */
 
 const request = require('request');
